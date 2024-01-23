@@ -13,9 +13,14 @@ fun main() {
         hora = readln().toInt()
         minutos = readln().toInt()
         segundos = readln().toInt()
+        if (hora > 24){
+            throw Exception("la hora tiene no puede ser mayor que 24")
+        }
     } catch (e: NumberFormatException){
         println("ERROR, tienen que ser numeros enteros")
-
+    }
+    catch (e: Exception){
+        println(e.message)
     }
 
 
@@ -27,4 +32,5 @@ fun main() {
 
     val tiempo3 = Tiempo(hora, minutos, segundos)
     println(tiempo3)
+    //Dependiendo de el parametro que meta estaria bien que se escogiera cada constructor
 }
